@@ -1,0 +1,42 @@
+query GetRestaurant {
+  restaurant(id: 1) {
+    name
+    description
+    dishes {
+      name
+      price
+    }
+  }
+}
+
+query GetAllRestaurants {
+  restaurants {
+    name
+    description
+    dishes {
+      name
+      price
+    }
+  }
+}
+
+mutation CreateRestaurant {
+  setrestaurant(input: {name: "New Restaurant", description: "New Description"}) {
+    name
+    description
+  }
+}
+
+mutation DeleteRestaurant {
+  deleterestaurant(id: 3) {
+    ok
+  }
+}
+
+mutation EditRestaurant {
+  editrestaurant(id: 2, name: "Updated Name") {
+    id
+    name
+    description
+  }
+}
